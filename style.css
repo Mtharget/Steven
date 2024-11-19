@@ -180,121 +180,150 @@
        letter-spacing: 1px;
             text-align: center;
    }
-                           .services {
-                               display: flex;
-                               justify-content: center;
-                               gap: 30px;
-                               flex-wrap: wrap;
-                               animation: fadeInContainer 1s ease-in-out;
-                               margin-bottom: 10px;
-                           }
-            
-                           /* Service Card Style */
-                           .service-card {
-                               background: #ffffff;
-                               border-radius: 12px;
-                               box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-                               width: 350px;
-                               padding: 20px;
-                               text-align: center;
-                               transform: translateY(30px);
-                               opacity: 0;
-                               animation: fadeInCard 0.8s forwards;
-                           }
-            
-                           /* Card Image */
-                           .service-card img {
-                               width: 100%;
-                               height: auto;
-                               border-radius: 12px;
-                               transition: transform 0.3s ease-in-out;
-                           }
-            
-                           .service-card img:hover {
-                               transform: scale(1.05);
-                           }
-            
-                           .service-card h3 {
-                               font-size: 22px;
-                               font-weight: 600;
-                               margin-top: 20px;
-                           }
-            
-                           .service-card p {
-                               font-size: 14px;
-                               color: #777;
-                               margin-top: 10px;
-                               line-height: 1.6;
-                           }
-            
-                                          .explore-button {
-                                              background-color: transparent;
-                                              color: #3498db;
-                                              border: 1px #3498db solid;
-                                              padding: 12px 20px;
-                                              font-size: 16px;
-                                              border-radius: 5px;
-                                              cursor: pointer;
-                                              display: inline-flex;
-                                              align-items: center;
-                                              transition: background-color 0.5s ease-in-out;
-                                          }
-                    
-                                          .explore-button:hover {
-                                              background-color: #2980b9;
-                                              color: white;
-                                              
-                                          }
-                    
-                                          .explore-button span {
-                                              margin-left: 8px;
-                                              font-size: 18px;
-                                          }
-            
-                           /* Fade-in Animation */
-                           @keyframes fadeInContainer {
-                               0% {
-                                   opacity: 0;
-                               }
-            
-                               100% {
-                                   opacity: 1;
-                               }
-                           }
-            
-                           @keyframes fadeInCard {
-                               0% {
-                                   opacity: 0;
-                                   transform: translateY(30px);
-                               }
-            
-                               100% {
-                                   opacity: 1;
-                                   transform: translateY(0);
-                               }
-                           }
-            
-                           /* Stagger the Fade-in for each card */
-                           .service-card:nth-child(1) {
-                               animation-delay: 0.2s;
-                           }
-            
-                           .service-card:nth-child(2) {
-                               animation-delay: 0.4s;
-                           }
-            
-                           .service-card:nth-child(3) {
-                               animation-delay: 0.6s;
-                           }
-            
-                           /* Responsive Design */
-                           @media (max-width: 768px) {
-                               .services {
-                                   flex-direction: column;
-                                   gap: 20px;
-                               }
-                           }
 
+   .services {
+       display: flex;
+       justify-content: center;
+       gap: 30px;
+       flex-wrap: wrap;
+       animation: fadeInContainer 1s ease-in-out;
+       margin-bottom: 10px;
+   }
+
+   /* Service Card Style */
+   .service-card {
+       background: #ffffff;
+       border-radius: 12px;
+       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+       width: 100%;
+       /* Full width for smaller screens */
+       max-width: 350px;
+       /* Limit the card width on larger screens */
+       padding: 20px;
+       text-align: center;
+       transform: translateY(30px);
+       opacity: 0;
+       animation: fadeInCard 0.8s forwards;
+   }
+
+   /* Card Image */
+   .service-card img {
+       width: 100%;
+       height: auto;
+       border-radius: 12px;
+       transition: transform 0.3s ease-in-out;
+   }
+
+   .service-card img:hover {
+       transform: scale(1.05);
+   }
+
+   .service-card h3 {
+       font-size: 22px;
+       font-weight: 600;
+       margin-top: 20px;
+   }
+
+   .service-card p {
+       font-size: 14px;
+       color: #777;
+       margin-top: 10px;
+       line-height: 1.6;
+   }
+.explore-button {
+    background-color: transparent;
+    color: #3498db;
+    border: 1px solid #3498db;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* Ensures content stays centered */
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    width: auto;
+    /* Default width for larger screens */
+}
+
+.explore-button:hover {
+    background-color: #2980b9;
+    color: white;
+}
+
+.explore-button span {
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+/* Adjust Button Width for Smaller Screens */
+@media (max-width: 768px) {
+    .explore-button {
+        width: 50%;
+        /* Make button span full width */
+        padding: 12px;
+        /* Adjust padding for consistency */
+        font-size: 14px;
+        /* Slightly smaller font for smaller screens */
+    }
+}
+   /* Fade-in Animation */
+   @keyframes fadeInContainer {
+       0% {
+           opacity: 0;
+       }
+
+       100% {
+           opacity: 1;
+       }
+   }
+
+   @keyframes fadeInCard {
+       0% {
+           opacity: 0;
+           transform: translateY(30px);
+       }
+
+       100% {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   }
+
+   /* Stagger the Fade-in for each card */
+   .service-card:nth-child(1) {
+       animation-delay: 0.2s;
+   }
+
+   .service-card:nth-child(2) {
+       animation-delay: 0.4s;
+   }
+
+   .service-card:nth-child(3) {
+       animation-delay: 0.6s;
+   }
+
+   /* Responsive Design */
+   @media (max-width: 768px) {
+       .services {
+           flex-direction: column;
+           gap: 20px;
+           /* Reduce the gap for smaller screens */
+       }
+
+       .service-card {
+           max-width: 100%;
+           /* Allow cards to take full width on smaller screens */
+           margin: 0 auto;
+           /* Center the cards */
+       }
+
+       .explore-button {
+           width: 100%;
+           /* Make button take full width for better UX */
+       }
+   }
 
                  /* Add this CSS to style the fade-in effect */
                  @keyframes fadeIn {
